@@ -1,17 +1,16 @@
 {
   "name": "@smore/trailmap",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple component that generates @stencil/router routes, mapping a url to a content path",
-  "module": "dist/esm/index.js",
   "main": "dist/index.js",
-  "types": "dist/types/components.d.ts",
-  "collection": "dist/collection/collection-manifest.json",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/"
   ],
   "scripts": {
-    "build": "stencil build",
-    "start": "stencil build --dev --watch --serve",
+    "clean": "rm -rf dist/ && mkdir dist/",
+    "prebuild": "npm run clean",
+    "build": "tsc -p .",
     "test": "jest",
     "test.watch": "jest --watch"
   },
